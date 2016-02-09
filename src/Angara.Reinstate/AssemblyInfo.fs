@@ -4,15 +4,19 @@ open System.Reflection
 open System.Runtime.CompilerServices
 open System.Runtime.InteropServices
 
+module internal Const =
+    [<Literal>]
+    let Version = "1.0.0"
+
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [<assembly: AssemblyTitle("Angara.Reinstate")>]
-[<assembly: AssemblyDescription("")>]
+[<assembly: AssemblyDescription("Library that reinstates computation results either from the storage or recomputing a value from the function")>]
 [<assembly: AssemblyConfiguration("")>]
-[<assembly: AssemblyCompany("")>]
+[<assembly: AssemblyCompany("Microsoft Research")>]
 [<assembly: AssemblyProduct("Angara.Reinstate")>]
-[<assembly: AssemblyCopyright("Copyright ©  2016")>]
+[<assembly: AssemblyCopyright("Copyright © Microsoft Research 2016")>]
 [<assembly: AssemblyTrademark("")>]
 [<assembly: AssemblyCulture("")>]
 
@@ -24,18 +28,8 @@ open System.Runtime.InteropServices
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [<assembly: Guid("d3c4dedf-431d-4816-b07c-4be07fdd687d")>]
 
-// Version information for an assembly consists of the following four values:
-// 
-//       Major Version
-//       Minor Version 
-//       Build Number
-//       Revision
-// 
-// You can specify all the values or you can default the Build and Revision Numbers 
-// by using the '*' as shown below:
-// [<assembly: AssemblyVersion("1.0.*")>]
-[<assembly: AssemblyVersion("1.0.0.0")>]
-[<assembly: AssemblyFileVersion("1.0.0.0")>]
+[<assembly: AssemblyVersion(Const.Version + ".0")>]
+[<assembly: AssemblyFileVersion(Const.Version + ".0")>]
 
 do
     ()
