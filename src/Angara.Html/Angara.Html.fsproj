@@ -5,14 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>d3c4dedf-431d-4816-b07c-4be07fdd687d</ProjectGuid>
+    <ProjectGuid>714b3368-671c-4452-837b-f487a8e027a4</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Angara.Reinstate</RootNamespace>
-    <AssemblyName>Angara.Reinstate</AssemblyName>
+    <RootNamespace>Angara.Html</RootNamespace>
+    <AssemblyName>Angara.Html</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Name>Angara.Reinstate</Name>
+    <Name>Angara.Html</Name>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -23,7 +23,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Debug\Angara.Reinstate.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Angara.Html.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,7 +32,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Release\Angara.Reinstate.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Angara.Html.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
@@ -52,14 +52,24 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="InlineByteBlob.fs" />
-    <Compile Include="FolderBlobStorage.fs" />
-    <Compile Include="IStreamExportImport.fs" />
-    <Compile Include="IExportImport.fs" />
-    <Compile Include="FolderExportImport.fs" />
-    <Compile Include="JsonExporterImporter.fs" />
-    <Compile Include="Persistence.fs" />
+    <Compile Include="RecordViewSerializer.fs" />
+    <Compile Include="Resolver.fs" />
+    <Compile Include="Save.fs" />
     <Content Include="packages.config" />
+    <None Include="bower.json" />
+    <None Include="Gruntfile.js" />
+    <None Include="package.json" />
+    <None Include="tsd.json" />
+    <EmbeddedResource Include="web.zip" />
+    <None Include="Scripts/App.js" />
+    <None Include="Scripts/Main.js" />
+    <None Include="Scripts/Angara.Html.css" />
+    <None Include="Scripts/Angara.Show.ts" />
+    <None Include="Scripts/Primitive.ts" />
+    <None Include="Scripts\Record.ts" />
+    <None Include="Scripts/Seq.ts" />
+    <EmbeddedResource Include="Scripts/index.cshtml" />
+    <None Include="Angara.Html.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Angara.Serialization">
@@ -68,6 +78,10 @@
     </Reference>
     <Reference Include="Angara.Serialization.Json">
       <HintPath>..\..\ext\nuget\Angara.Serialization.Json.0.1.1.0\lib\net461\Angara.Serialization.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\..\ext\nuget\DotNetZip.1.9.8\lib\net20\Ionic.Zip.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />
@@ -80,13 +94,17 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Numerics" />
   </ItemGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <ItemGroup>
+    <ProjectReference Include="..\Angara.Reinstate\Angara.Reinstate.fsproj">
+      <Name>Angara.Reinstate</Name>
+      <Project>{d3c4dedf-431d-4816-b07c-4be07fdd687d}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <PreBuildEvent>grunt prepareWeb --no-color</PreBuildEvent>
+  </PropertyGroup>  
 </Project>

@@ -1,0 +1,44 @@
+{
+  "name": "angara.html",
+  "version": "0.1.1",
+  "description": "",
+  "main": "Gruntfile.js",
+  "authors": [
+    "Microsoft Research",
+    "ITIS MSU"
+  ],
+  "license": "Microsoft Research",
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "domReady": "^2.0.1",
+    "angara.serializationjs": "predictionmachines/Angara.Serialization",
+    "angara.chartjs": "predictionmachines/Angara.Chart",
+    "jquery-ui": "^1.11.4",
+    "require-css": "^0.1.8"
+  },
+  "exportsOverride": {
+    "angara.chartjs": {
+      "..": "dist/Chart.js"
+    },
+    "rxjs": {
+      "": "dist/rx.lite.min.js"
+    },
+    "rx": {},
+    "modernizr": {
+      "": "modernizr.js"
+    },
+    "domReady": {
+      "": "domReady.js"
+    },
+    "require-css": {
+      "": "css.js"
+    }
+  },
+  "devDependencies": {
+    "requirejs": "^2.1.22"
+  }
+}

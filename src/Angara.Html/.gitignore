@@ -1,0 +1,10 @@
+web.zip
+.Web
+.tscache
+node_modules
+bower_components
+typings
+Scripts/.baseDir.*
+Scripts/*.js*
+!Scripts/Main.js
+!Scripts/App.js

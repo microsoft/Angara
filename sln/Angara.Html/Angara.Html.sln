@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Angara.Html", "..\..\src\Angara.Html\Angara.Html.fsproj", "{714B3368-671C-4452-837B-F487A8E027A4}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Angara.Reinstate", "..\..\src\Angara.Reinstate\Angara.Reinstate.fsproj", "{D3C4DEDF-431D-4816-B07C-4BE07FDD687D}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Angara.Html.Sample", "..\..\src\Angara.Html.Sample\Angara.Html.Sample.fsproj", "{C45FA56D-4094-4D91-BCD6-BBDEA8B7F198}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Angara.Base", "..\..\src\Angara.Base\Angara.Base.fsproj", "{959FECAD-157A-4ECA-85AD-5CAFC28053B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{714B3368-671C-4452-837B-F487A8E027A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{714B3368-671C-4452-837B-F487A8E027A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{714B3368-671C-4452-837B-F487A8E027A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{714B3368-671C-4452-837B-F487A8E027A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3C4DEDF-431D-4816-B07C-4BE07FDD687D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3C4DEDF-431D-4816-B07C-4BE07FDD687D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3C4DEDF-431D-4816-B07C-4BE07FDD687D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3C4DEDF-431D-4816-B07C-4BE07FDD687D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C45FA56D-4094-4D91-BCD6-BBDEA8B7F198}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C45FA56D-4094-4D91-BCD6-BBDEA8B7F198}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C45FA56D-4094-4D91-BCD6-BBDEA8B7F198}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C45FA56D-4094-4D91-BCD6-BBDEA8B7F198}.Release|Any CPU.Build.0 = Release|Any CPU
+		{959FECAD-157A-4ECA-85AD-5CAFC28053B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{959FECAD-157A-4ECA-85AD-5CAFC28053B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{959FECAD-157A-4ECA-85AD-5CAFC28053B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{959FECAD-157A-4ECA-85AD-5CAFC28053B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

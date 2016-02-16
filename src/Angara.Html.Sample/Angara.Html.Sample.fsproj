@@ -5,14 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>d3c4dedf-431d-4816-b07c-4be07fdd687d</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Angara.Reinstate</RootNamespace>
-    <AssemblyName>Angara.Reinstate</AssemblyName>
+    <ProjectGuid>c45fa56d-4094-4d91-bcd6-bbdea8b7f198</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Angara.Html.Sample</RootNamespace>
+    <AssemblyName>Angara.Html.Sample</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Name>Angara.Reinstate</Name>
+    <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
+    <Name>Angara.Html.Sample</Name>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -23,7 +23,9 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Debug\Angara.Reinstate.XML</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>bin\Debug\Angara.Html.Sample.XML</DocumentationFile>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,7 +34,9 @@
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Release\Angara.Reinstate.XML</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>bin\Release\Angara.Html.Sample.XML</DocumentationFile>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
@@ -52,16 +56,20 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="InlineByteBlob.fs" />
-    <Compile Include="FolderBlobStorage.fs" />
-    <Compile Include="IStreamExportImport.fs" />
-    <Compile Include="IExportImport.fs" />
-    <Compile Include="FolderExportImport.fs" />
-    <Compile Include="JsonExporterImporter.fs" />
-    <Compile Include="Persistence.fs" />
+    <Compile Include="Program.fs" />
+    <None Include="App.config" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Angara.Base\Angara.Base.fsproj">
+      <Name>Angara.Base</Name>
+      <Project>{959fecad-157a-4eca-85ad-5cafc28053b7}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <Reference Include="Angara.Chart">
+      <HintPath>..\..\ext\nuget\Angara.Chart.0.1.0.0\lib\net461\Angara.Chart.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Angara.Serialization">
       <HintPath>..\..\ext\nuget\Angara.Serialization.0.1.1.0\lib\net461\Angara.Serialization.dll</HintPath>
       <Private>True</Private>
@@ -81,6 +89,11 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
+    <ProjectReference Include="..\Angara.Html\Angara.Html.fsproj">
+      <Name>Angara.Html</Name>
+      <Project>{714b3368-671c-4452-837b-f487a8e027a4}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

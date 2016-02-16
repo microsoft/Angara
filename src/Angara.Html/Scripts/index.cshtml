@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" style="height: 100%">
+<head>
+    <title>@Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=10; IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href=".Web/Angara.Html.css" rel="stylesheet" />
+    <script>
+        var content = @Content;
+    </script>
+    <script data-main=".Web/App" src=".Web/requirejs/require.js"></script>
+</head>
+<body>
+    <section class="flexible-container">
+        <header><h1>@Title</h1></header>
+        <div> <!-- 2 extra inner div-s are required because of an issue with flex elements in Chrome -->
+            <div>
+                <div id="viewer">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
