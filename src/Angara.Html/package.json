@@ -12,6 +12,7 @@
     "grunt-cli": "^0.1.13",
     "grunt-contrib-compress": "^0.14.0",
     "grunt-contrib-copy": "^0.8.2",
+    "grunt-preen": "^1.2.0",
     "grunt-ts": "^5.2.0",
     "grunt-tsd": "^0.2.0-beta.1"
   },

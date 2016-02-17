@@ -20,23 +20,37 @@
     "jquery-ui": "^1.11.4",
     "require-css": "^0.1.8"
   },
-  "exportsOverride": {
-    "angara.chartjs": {
-      "..": "dist/Chart.js"
-    },
-    "rxjs": {
-      "": "dist/rx.lite.min.js"
-    },
-    "rx": {},
-    "modernizr": {
-      "": "modernizr.js"
-    },
-    "domReady": {
-      "": "domReady.js"
-    },
-    "require-css": {
-      "": "css.js"
-    }
+  "preen": {
+    "angara.serializationjs": [
+      "dist/*.umd.*"
+    ],
+    "angara.chartjs": [
+      "dist/*"
+    ],
+    "idd": [
+      "dist/**/*"
+    ],
+    "domReady": [
+      "domReady.js"
+    ],
+    "jquery": [
+      "dist/*"
+    ],
+    "rxjs": [
+      "dist/rx.lite.*"
+    ],
+    "require-css": [
+      "*.js"
+    ],
+    "jquery-ui": [
+      "jquery-ui.*js"
+    ],
+    "jqueryui": [
+      "jquery-ui.*js"
+    ],
+    "modernizr": [
+        "modernizr.*js"
+    ]
   },
   "devDependencies": {
     "requirejs": "^2.1.22"

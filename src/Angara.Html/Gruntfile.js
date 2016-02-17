@@ -5,12 +5,9 @@ module.exports = function (grunt) {
     grunt.initConfig({
         bower: {
             install: {
-                options: {
-                    targetDir: './.Web',
-                    layout: 'byComponent',
+                options: {                   
                     install: true,
-                    verbose: false,
-                    cleanTargetDir: false,
+                    copy: false,
                     cleanBowerDir: false
                 }
             }
@@ -25,6 +22,12 @@ module.exports = function (grunt) {
             }
         },
         copy: {
+            bower: {
+              expand: true,
+              cwd: './bower_components',
+              src: '**/*',
+              dest: './.Web/'  
+            },
             styles: {
                 expand: true,
                 cwd: './Scripts/',
@@ -36,13 +39,6 @@ module.exports = function (grunt) {
                 cwd: './Scripts/',
                 src: ['*.js'],
                 dest: './.Web/'
-            },
-            'angara.serializationjs': {
-                expand: true,
-                cwd: './bower_components/angara.serializationjs/dist/',
-                src: '*.umd.*',
-                dest: './.Web/angara.serializationjs/'
-
             }
         },
         compress: {
@@ -83,6 +79,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-tsd');
     grunt.loadNpmTasks("grunt-ts");
-    grunt.registerTask('prepareWeb', ['bower', 'tsd', 'copy:angara.serializationjs', 'ts', 'copy:styles', 'copy:scripts', 'compress']);
+    grunt.loadNpmTasks('grunt-preen');
+    grunt.registerTask('prepareWeb', ['bower', 'preen', 'copy', 'tsd', 'ts', 'compress']);
     grunt.registerTask('default', ['prepareWeb']);
 };
