@@ -18,7 +18,8 @@
     "angara.serializationjs": "predictionmachines/Angara.Serialization",
     "angara.chartjs": "predictionmachines/Angara.Chart",
     "jquery-ui": "^1.11.4",
-    "require-css": "^0.1.8"
+    "require-css": "^0.1.8",
+    "idd": "^1.1.4"
   },
   "preen": {
     "angara.serializationjs": [
@@ -37,7 +38,7 @@
       "dist/*"
     ],
     "rxjs": [
-      "dist/rx.lite.*"
+      "dist/rx.lite.js", "dist/rx.lite.min.js", "dist/rx.lite.map"
     ],
     "require-css": [
       "*.js"
@@ -49,7 +50,7 @@
       "jquery-ui.*js"
     ],
     "modernizr": [
-        "modernizr.*js"
+      "modernizr.*js"
     ]
   },
   "devDependencies": {

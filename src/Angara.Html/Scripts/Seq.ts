@@ -1,7 +1,6 @@
 ﻿/// <reference path="../typings/requirejs/require.d.ts" />
 /// <reference path="../typings/jquery/jquery.d.ts" />
 
-import Serialization = require("../.Web/angara.serializationjs/Angara.Serialization.umd")
 import Angara = require("Angara.Show")
 declare var Utils;
 

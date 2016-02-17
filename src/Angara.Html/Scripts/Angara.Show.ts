@@ -1,8 +1,9 @@
 ﻿/// <reference path="../typings/requirejs/require.d.ts" />
 /// <reference path="../typings/jquery/jquery.d.ts" />
+/// <reference path="../.Web/angara.serializationjs/dist/Angara.Serialization.umd.d.ts" />
 
 import $ = require("jquery");
-import Angara = require("../.Web/angara.serializationjs/Angara.Serialization.umd");
+import Angara = require("../.Web/angara.serializationjs/dist/Angara.Serialization.umd");
 
 var endsWith = function (searchString, position) {
     var subjectString = this.toString();

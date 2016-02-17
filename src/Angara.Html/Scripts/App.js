@@ -1,17 +1,18 @@
 ﻿require.config({
     paths: {
+        "Chart": "angara.chartjs/dist/Chart",
         "tableViewer": "TableViewer/tableViewer",
         "jquery.dataTables": "DataTables/jquery.dataTables",
         "jquery.dataTables-css": "DataTables/jquery.dataTables",
-        "chartViewer.umd": "idd/chartViewer.umd",
-        "chartViewer-css": "idd/chartViewer",
-        "idd": "idd/idd",
-        "idd-css": "idd/idd",
+        "chartViewer.umd": "idd/dist/chartViewer.umd",
+        "chartViewer-css": "idd/dist/chartViewer",
+        "idd": "idd/dist/idd",
+        "idd-css": "idd/dist/idd",
         "domReady": "domReady/domReady",
-        "jquery": "jquery/jquery",
-        "jquery-ui": "jquery-ui/jquery-ui",
-        "css": "require-css/css",
-        "rx": "rxjs/rx.lite.min"
+        "jquery": "jquery/dist/jquery.min",
+        "jquery-ui": "jquery-ui/jquery-ui.min",
+        "css": "require-css/css.min",
+        "rx": "rxjs/dist/rx.lite.min"
     }
 });
 
