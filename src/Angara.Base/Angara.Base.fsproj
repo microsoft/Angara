@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Angara.Chart">
-      <HintPath>..\..\ext\nuget\Angara.Chart.0.1.0.0\lib\net461\Angara.Chart.dll</HintPath>
+      <HintPath>..\..\ext\nuget\Angara.Chart.0.1.1.0\lib\net461\Angara.Chart.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Angara.Serialization">
