@@ -104,6 +104,6 @@
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
-    <PreBuildEvent>grunt prepareWeb --no-color</PreBuildEvent>
+    <PreBuildEvent>npm install &amp; grunt prepareWeb --no-color</PreBuildEvent>
   </PropertyGroup>
 </Project>
