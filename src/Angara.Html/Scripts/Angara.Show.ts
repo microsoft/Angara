@@ -15,20 +15,30 @@ var endsWith = function (searchString, position) {
     return lastIndex !== -1 && lastIndex === position;
 };
 
-var isPrimitiveType = function (obj: any) {
-    return typeof (obj) === "boolean" || typeof (obj) === "number" || typeof (obj) === "string" || obj instanceof Date;
+type ContentDescription = {
+    module: string;
+    type: string;
 }
 
-var moduleOf = function (content: any) {
+var descr = function(module: string, type: string){
+    return { module: module, type: type };
+}
+
+var describeContent = function (content: any): ContentDescription {
     if (content === undefined || content === null)
-        return "Primitive";
-    if (typeof content[Angara.TypeIdPropertyName] === "string")
-        return <string>content[Angara.TypeIdPropertyName];
+        return descr("Primitive", "");
+    if (typeof content[Angara.TypeIdPropertyName] === "string") {
+        var typeId = <string>content[Angara.TypeIdPropertyName];
+        return descr(typeId, typeId);
+    }
     if (Array.isArray(content))
-        return "Seq";
-    if (isPrimitiveType(content))
-        return "Primitive";
-    return "Record";
+        return descr("Seq", "array");
+    var tp = typeof (content);
+    if (tp === "boolean" || tp === "number" || tp === "string")
+        return descr("Primitive", tp)
+    if (content instanceof Date)
+        return descr("Primitive", "date");
+    return descr("Record", "record");
 }
 
 var errFailedToLoad = function (err: any, module: string) {
@@ -40,8 +50,8 @@ var errFailedToLoad = function (err: any, module: string) {
 
 export var Show = function (content: any, container: HTMLElement) {
     $(container).addClass("angara-show-content").html("Loading...");
-    var module = moduleOf(content);
-    require([module], function (viewer) {
+    var dsc = describeContent(content);
+    require([dsc.module], function (viewer) {
         $(container).html("");
         return viewer.Show(content, container);
     }, function (err) {
@@ -55,7 +65,8 @@ export var Show = function (content: any, container: HTMLElement) {
             $(container).html("");
             return viewer.Show(content, container);
         }, function (err) {
-            $(container).html(errFailedToLoad(err, module)).addClass("angara-show-errormessage");
+            $(container).html(errFailedToLoad(err, dsc.module)).addClass("angara-show-errormessage");
         });
     });
+    return dsc.type;
 }

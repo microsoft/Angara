@@ -12,10 +12,15 @@ export var Show = function (content: Object, container: HTMLElement) {
         for (var prop in content) {
             if (prop == Serialization.TypeIdPropertyName) continue;
             var $el = $("<section></section>").addClass("angara-show-seq-item").appendTo($value);
-            var $head = $("<div></div>").addClass("angara-show-seq-item-header").addClass("angara-show-caption").appendTo($el);
-            $head.text(prop);
+            var $head = $("<div></div>").addClass("angara-show-seq-item-header").appendTo($el);
+            var $head_name = $("<span></span>").addClass("angara-show-caption").appendTo($head);
+            $head_name.text(prop);
             var $item = $("<div></div>").addClass("angara-show-seq-item-content").appendTo($el);
-            Angara.Show(content[prop], $item[0]);
+            var itemType = Angara.Show(content[prop], $item[0]);
+            if (itemType) {
+                var $head_type = $("<span></span>").addClass("angara-show-caption-type").appendTo($head);
+                $head_type.text(itemType);
+            }
         }
     });
 }
