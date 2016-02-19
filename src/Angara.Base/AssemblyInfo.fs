@@ -1,4 +1,4 @@
-﻿namespace Angara.AssemblyInfo
+namespace Angara.AssemblyInfo
 
 open System.Reflection
 open System.Runtime.CompilerServices
@@ -6,7 +6,7 @@ open System.Runtime.InteropServices
 
 module internal Const =
     [<Literal>]
-    let Version = "0.1.0"
+    let Version = "0.1.1"
 
 [<assembly: AssemblyTitle("Angara.Base")>]
 [<assembly: AssemblyDescription("Combines base libraries of Angara such as statistics, tables, chart and visualization, configures serialization.")>]

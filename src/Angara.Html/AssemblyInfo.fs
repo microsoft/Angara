@@ -1,4 +1,4 @@
-﻿namespace AssemblyInfo
+namespace AssemblyInfo
 
 open System.Reflection
 open System.Runtime.CompilerServices
@@ -6,7 +6,7 @@ open System.Runtime.InteropServices
 
 module internal Const =
     [<Literal>]
-    let Version = "0.1.0"
+    let Version = "0.1.1"
 
 [<assembly: AssemblyTitle("Angara.Html")>]
 [<assembly: AssemblyDescription("Dynamically generates an HTML page that displays an object.")>]

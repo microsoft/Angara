@@ -1,4 +1,4 @@
-﻿namespace Angara.Reinstate.AssemblyInfo
+namespace Angara.Reinstate.AssemblyInfo
 
 open System.Reflection
 open System.Runtime.CompilerServices
@@ -6,7 +6,7 @@ open System.Runtime.InteropServices
 
 module internal Const =
     [<Literal>]
-    let Version = "0.1.0"
+    let Version = "0.1.1"
 
 [<assembly: AssemblyTitle("Angara.Reinstate")>]
 [<assembly: AssemblyDescription("Library that reinstates computation results either from the storage or recomputing a value from the function.")>]
