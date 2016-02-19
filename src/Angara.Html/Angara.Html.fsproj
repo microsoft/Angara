@@ -69,6 +69,7 @@
     <None Include="Scripts\Record.ts" />
     <None Include="Scripts/Seq.ts" />
     <EmbeddedResource Include="Scripts/index.cshtml" />
+    <None Include="prebuild.cmd" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Angara.Serialization">
@@ -104,6 +105,6 @@
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
-    <PreBuildEvent>npm install &amp; grunt prepareWeb --no-color</PreBuildEvent>
+    <PreBuildEvent>$(ProjectDir)prebuild.cmd "$(DevEnvDir)"</PreBuildEvent>
   </PropertyGroup>
 </Project>

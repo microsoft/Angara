@@ -84,6 +84,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-tsd');
     grunt.loadNpmTasks("grunt-ts");
     grunt.loadNpmTasks('grunt-preen');
-    grunt.registerTask('prepareWeb', ['bower', 'preen', 'clean:web', 'copy', 'tsd', 'ts', 'compress']);
+    grunt.registerTask('prepareWeb', ['bower', 'preen', 'clean:web', 'copy:bower', 'tsd', 'ts', 'copy:scripts', 'copy:styles', 'compress']);
     grunt.registerTask('default', ['prepareWeb']);
 };

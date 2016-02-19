@@ -28,8 +28,6 @@ type SupportedTypesRecord =
 
 [<EntryPoint>]
 let main argv = 
-    Angara.Base.Init()
-
     let x = [| 0..50 |]
     let y = x|> Array.map (fun x -> sin((float x) / 180.0 * System.Math.PI))
 
@@ -71,9 +69,10 @@ Vestibulum vitae enim sed dui pharetra tristique. Donec maximus elementum maximu
         ; Chart = chart
         }
 
-   // Angara.Html.Save "sample table.html" tableXY
-    //Angara.Html.Save "sample tables.html" [| tableXY; Tables.Empty |> Tables.Add "c" [| 0..50 |] |> Tables.Add "t" [| for x in 0..50 do yield System.DateTime(2015,1,1).AddHours(float x) |] |]
+    Angara.Base.Init()
     Angara.Html.Save "sample chart.html" chart
+    //Angara.Html.Save "sample table.html" tableXY
+    //Angara.Html.Save "sample tables.html" [| tableXY; Tables.Empty |> Tables.Add "c" [| 0..50 |] |> Tables.Add "t" [| for x in 0..50 do yield System.DateTime(2015,1,1).AddHours(float x) |] |]
     Angara.Html.Save "supported types.html" supportedTypes
     System.Diagnostics.Process.Start("sample chart.html") |> ignore
 
