@@ -21,6 +21,9 @@ module.exports = function (grunt) {
                 }
             }
         },
+        clean: {
+            web: ['./.Web/']
+        },
         copy: {
             bower: {
               expand: true,
@@ -77,9 +80,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-bower-task');
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-tsd');
     grunt.loadNpmTasks("grunt-ts");
     grunt.loadNpmTasks('grunt-preen');
-    grunt.registerTask('prepareWeb', ['bower', 'preen', 'copy', 'tsd', 'ts', 'compress']);
+    grunt.registerTask('prepareWeb', ['bower', 'preen', 'clean:web', 'copy', 'tsd', 'ts', 'compress']);
     grunt.registerTask('default', ['prepareWeb']);
 };
