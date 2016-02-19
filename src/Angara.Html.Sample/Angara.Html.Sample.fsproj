@@ -71,11 +71,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Angara.Serialization">
-      <HintPath>..\..\ext\nuget\Angara.Serialization.0.1.1.0\lib\net461\Angara.Serialization.dll</HintPath>
+      <HintPath>..\..\ext\nuget\Angara.Serialization.0.1.2.0\lib\net461\Angara.Serialization.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Angara.Serialization.Json">
-      <HintPath>..\..\ext\nuget\Angara.Serialization.Json.0.1.1.0\lib\net461\Angara.Serialization.Json.dll</HintPath>
+      <HintPath>..\..\ext\nuget\Angara.Serialization.Json.0.1.2.0\lib\net461\Angara.Serialization.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />

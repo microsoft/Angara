@@ -3,7 +3,7 @@
 open Newtonsoft.Json
 open System.IO
 open Newtonsoft.Json.Linq
-open Angara.Serialization.Json
+open Angara.Serialization
 
 type internal JsonExporter () =
     interface IExportToStream with

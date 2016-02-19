@@ -1,7 +1,6 @@
 ﻿namespace Angara.Persistence
 
 open Angara.Serialization
-open Angara.Serialization.Json
 open Angara.Persistence
 
 // Exports a SerializationInfo to a stream with possible extra data containers.

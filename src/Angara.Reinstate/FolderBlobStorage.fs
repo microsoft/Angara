@@ -2,7 +2,7 @@
 
 open System
 open System.IO
-open Angara.Serialization.Json
+open Angara.Serialization
 
 type internal FolderBlobWriter(rootFolder, name) =
     let fullPath = Path.GetFullPath(rootFolder)
