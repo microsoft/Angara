@@ -6,7 +6,7 @@ open System.Runtime.InteropServices
 
 module internal Const =
     [<Literal>]
-    let Version = "0.1.1"
+    let Version = "0.1.2"
 
 [<assembly: AssemblyTitle("Angara.Base")>]
 [<assembly: AssemblyDescription("Combines base libraries of Angara such as statistics, tables, chart and visualization, configures serialization.")>]

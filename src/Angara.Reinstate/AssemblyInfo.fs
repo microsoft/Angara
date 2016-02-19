@@ -6,7 +6,7 @@ open System.Runtime.InteropServices
 
 module internal Const =
     [<Literal>]
-    let Version = "0.1.1"
+    let Version = "0.1.2"
 
 [<assembly: AssemblyTitle("Angara.Reinstate")>]
 [<assembly: AssemblyDescription("Library that reinstates computation results either from the storage or recomputing a value from the function.")>]
