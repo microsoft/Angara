@@ -1,0 +1,150 @@
+﻿html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-family: "Segoe UI", "Helvetica", "Tahoma", "Arial";
+    font-size: 15px;
+    line-height: 20px;
+}
+
+/* https://msdn.microsoft.com/en-us//library/windows/apps/hh700394.aspx */
+
+/* header */
+header, h1 {
+    font-family: "Segoe UI Light";
+    font-size: 46px;
+    line-height: 56px;
+}
+
+/* subheader */
+h2 {
+    font-family: "Segoe UI Light";
+    font-size: 34px;
+    line-height: 40px;
+}
+
+/* title */
+h3 {
+    font-family: "Segoe UI Semilight";
+    font-size: 24px;
+    line-height: 28px;
+}
+
+/* subtitle */
+h4 {
+    font-family: "Segoe UI";
+    font-size: 20px;
+    line-height: 24px;
+}
+
+/* caption */
+.angara-show-caption {
+    font-family: "Segoe UI";
+    font-size: 15px;
+    line-height: 14px;
+}
+
+.angara-show-caption-type {
+    font-family: "Segoe UI";
+    font-size: 12px;
+    line-height: 14px;
+    margin-left: 20px;
+}
+
+.flexible-container {
+    min-height: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+    .flexible-container > header {
+        background-color: rgb(0,122,204);
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .flexible-container > div {
+        position: relative;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -moz-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -moz-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -moz-box-orient: vertical;
+        -moz-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+        .flexible-container > div > div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+        }
+
+            .flexible-container > div > div > div {
+                width: 100%;
+                height: 100%;
+                position: relative;
+            }
+
+
+.angara-show-errormessage {
+    color: orangered;
+    padding: 20px;
+    font-size: larger;
+}
+
+.angara-show-content {    
+}
+
+.angara-show-primitive {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.angara-show-string {
+    word-wrap: break-word; /* IE>=5.5 */
+    white-space: pre; /* IE>=6 */
+    white-space: -moz-pre-wrap; /* For Fx<=2 */
+    white-space: pre-wrap; /* Fx>3, Opera>8, Safari>3*/
+}
+
+.angara-show-seq-item-header {
+    padding: 14px;
+    padding-left: 20px;
+    margin-bottom: 1px;
+    background-color: rgb(147, 198, 235);
+    /*background-color: rgb(109, 175, 224);*/
+    color: white;
+}
+
+.angara-show-seq-item-content {
+    padding-left: 20px;
+}
