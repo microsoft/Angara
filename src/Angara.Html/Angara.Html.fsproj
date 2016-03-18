@@ -66,9 +66,10 @@
     <None Include="Scripts/Angara.Html.css" />
     <None Include="Scripts/Angara.Show.ts" />
     <None Include="Scripts/Primitive.ts" />
-    <None Include="Scripts\Record.ts" />
+    <None Include="Scripts/Record.ts" />
     <None Include="Scripts/Seq.ts" />
     <EmbeddedResource Include="Scripts/index.cshtml" />
+    <EmbeddedResource Include="Scripts/embeddableIndex.cshtml" />
     <None Include="prebuild.cmd" />
   </ItemGroup>
   <ItemGroup>

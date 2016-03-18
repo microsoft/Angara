@@ -4,6 +4,9 @@ open System.IO
 open Angara.Serialization
 open Angara.HtmlSerializers
 
+type internal SnippetAttributes = Map<string, string>
+
+let internal attributes (attrs:(string*string) seq) = Map.ofSeq attrs
 
 let internal xa = System.Reflection.Assembly.GetExecutingAssembly()
 
@@ -14,16 +17,24 @@ let internal unwrapWebFolder (targetDir : string) : string =
     webZip.ExtractAll(dir, Ionic.Zip.ExtractExistingFileAction.OverwriteSilently)
     dir
 
-let internal prepareHtml (path : string) (content : string) = 
-    let replace (placeholder : string) (content : string) (snippet : string) = snippet.Replace(placeholder, content)
+let internal applySnippet (snippetName : string) (attributes: SnippetAttributes) : string =
+    let replace (placeholder : string) (snippet : string) = 
+        match attributes |> Map.tryFind placeholder with
+        | Some attr -> snippet.Replace("@" + placeholder, attr)
+        | None when snippet.Contains("@" + placeholder) -> failwithf "No value for the snippet attribute '@%s' is given" placeholder
+        | None -> snippet
     
     let snippet = 
-        use src = "index.cshtml" |> xa.GetManifestResourceStream
+        use src = snippetName |> xa.GetManifestResourceStream
         use reader = new StreamReader(src)
         reader.ReadToEnd()
     
+    attributes |> Map.toSeq |> Seq.fold (fun s (key,_) -> replace key s) snippet
+    
+
+let internal prepareHtml (path : string) (content : string) = 
     let title = Path.GetFileNameWithoutExtension(path)
-    let page = snippet |> replace "@Title" title |> replace "@Content" content
+    let page = applySnippet "index.cshtml" (attributes [ "Title", title; "Content", content ])
     File.WriteAllText(path, page)
 
 
@@ -40,8 +51,7 @@ let internal UIResolver = SerializerCompositeResolver([ Angara.Serialization.Cor
 /// <param name="artefact">An object to display.</param>
 let Save (fileName : string) (artefact : obj) = 
     let targetDir = Path.GetDirectoryName fileName
-    let infoSet = Angara.Serialization.ArtefactSerializer.Serialize UIResolver artefact
-    let json = Angara.Serialization.Json.Marshal(infoSet, None)
+    let json = Angara.Serialization.Json.FromObject (UIResolver, artefact)
     let content = json.ToString(Newtonsoft.Json.Formatting.Indented)       
     let webDir = unwrapWebFolder targetDir
     prepareHtml fileName content
@@ -56,6 +66,11 @@ let Make (path:string) =
     let fileName = (if lastChar = Path.DirectorySeparatorChar || lastChar = Path.AltDirectorySeparatorChar then path.Substring(0, path.Length-1) else path) + ".html";
     Save fileName value
 
+let MakeEmbeddable (origin : string) (height: string) (artefact : obj) =
+    let json = Angara.Serialization.Json.FromObject (UIResolver, artefact)
+    let content = json.ToString(Newtonsoft.Json.Formatting.Indented)      
+    let viewerId = System.Guid.NewGuid().ToString("N")
+    applySnippet "embeddableIndex.cshtml" (attributes [ "Content", content; "Origin", origin; "ViewerId", viewerId; "Height", height ])
 
 do 
     RecordSerializer.Register(Angara.HtmlSerializers.RecordViewSerializer())

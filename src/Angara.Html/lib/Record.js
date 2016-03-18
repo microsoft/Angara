@@ -1,4 +1,4 @@
-define(["require", "exports", "../.Web/angara.serializationjs/dist/Angara.Serialization.umd", "Angara.Show"], function (require, exports, Serialization, Angara) {
+define(["require", "exports", "./Angara.Serialization.umd", "Angara.Show"], function (require, exports, Serialization, Angara) {
     exports.Show = function (content, container) {
         require(["jquery"], function ($) {
             var $container = $(container);

@@ -1,4 +1,4 @@
-define(["require", "exports", "jquery", "../.Web/angara.serializationjs/dist/Angara.Serialization.umd"], function (require, exports, $, Angara) {
+define(["require", "exports", "jquery", "Angara.Serialization.umd"], function (require, exports, $, Angara) {
     var endsWith = function (searchString, position) {
         var subjectString = this.toString();
         if (typeof position !== 'number' || !isFinite(position) || Math.floor(position) !== position || position > subjectString.length) {

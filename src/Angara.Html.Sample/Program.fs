@@ -1,4 +1,5 @@
 ﻿open Angara.Charting
+open System.Windows
 
 type Person =
     {
@@ -29,7 +30,7 @@ type SupportedTypesRecord =
 [<EntryPoint>]
 let main argv = 
     let x = [| 0..50 |]
-    let y = x|> Array.map (fun x -> sin((float x) / 180.0 * System.Math.PI))
+    let y = x|> Array.map (fun x -> cos((float x) / 180.0 * System.Math.PI))
 
     (*   Tables   *)
     //let tableXY = Tables.Empty |> Tables.Add "x" x |> Tables.Add "y" y
@@ -75,5 +76,9 @@ Vestibulum vitae enim sed dui pharetra tristique. Donec maximus elementum maximu
     //Angara.Html.Save "sample tables.html" [| tableXY; Tables.Empty |> Tables.Add "c" [| 0..50 |] |> Tables.Add "t" [| for x in 0..50 do yield System.DateTime(2015,1,1).AddHours(float x) |] |]
     Angara.Html.Save "supported types.html" supportedTypes
     System.Diagnostics.Process.Start("sample chart.html") |> ignore
+
+    let htmlChart = chart |> Angara.Html.MakeEmbeddable "--place here correct origin--" "450px"
+    System.IO.File.WriteAllText("emb.html", htmlChart)
+    printfn "Html is in the emb.html"
 
     0
