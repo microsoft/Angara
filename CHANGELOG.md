@@ -3,6 +3,7 @@
 * New method `Angara.Html.MakeEmbeddable` which generates HTML text displaying the object given
 as the argument. The HTML text loads all required resources from an origin CDN and can be
 embedded to an HTML page without any additional files required.
+* Nuget package Angara.Base depends on Angara.Statistics.
 
 ## 0.1.2 (February 19, 2016)
 
