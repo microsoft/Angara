@@ -1,4 +1,5 @@
 ﻿open Angara.Charting
+open Angara.Data
 open System.Windows
 
 type Person =
@@ -22,7 +23,7 @@ type SupportedTypesRecord =
         List: int list;
         Tuple: string*int;
         Record: Person;
-        //Table: Table;
+        Table: Table;
         Chart: Chart;
     }
 
@@ -33,7 +34,7 @@ let main argv =
     let y = x|> Array.map (fun x -> cos((float x) / 180.0 * System.Math.PI))
 
     (*   Tables   *)
-    //let tableXY = Tables.Empty |> Tables.Add "x" x |> Tables.Add "y" y
+    let tableXY = Table.OfColumns([Column.Create("x", x); Column.Create("y", y)])
 
     (*   Charts   *)
     let plots = 
@@ -63,16 +64,13 @@ Vestibulum vitae enim sed dui pharetra tristique. Donec maximus elementum maximu
         ; List = [ 1..10 ]
         ; Tuple = "Hello World!", 42
         ; Record = { Name = "Adam"; Dogs = [| "Alba"; "Eva" |]; Age = 25 }
-        //; Table = 
-        //    Tables.Empty 
-        //    |> Tables.Add "x" [| 0..50 |]
-        //    |> Tables.Add "y" [| for x in 0..50 do yield sin((float x) / 180.0 * System.Math.PI) |] 
+        ; Table = Table.OfColumns([Column.Create("x",[| 0..50 |]); Column.Create("y", [| for x in 0..50 do yield sin((float x) / 180.0 * System.Math.PI) |])])
         ; Chart = chart
         }
 
     Angara.Base.Init()
     Angara.Html.Save "sample chart.html" chart
-    //Angara.Html.Save "sample table.html" tableXY
+    Angara.Html.Save "sample table.html" tableXY
     //Angara.Html.Save "sample tables.html" [| tableXY; Tables.Empty |> Tables.Add "c" [| 0..50 |] |> Tables.Add "t" [| for x in 0..50 do yield System.DateTime(2015,1,1).AddHours(float x) |] |]
     Angara.Html.Save "supported types.html" supportedTypes
     System.Diagnostics.Process.Start("sample chart.html") |> ignore

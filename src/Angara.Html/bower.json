@@ -17,9 +17,12 @@
     "domReady": "^2.0.1",
     "angara.serializationjs": "predictionmachines/Angara.Serialization",
     "angara.chartjs": "predictionmachines/Angara.Chart",
+    "angara.tablejs": "predictionmachines/Angara.Table",
     "jquery-ui": "^1.11.4",
     "require-css": "^0.1.8",
-    "idd": "^1.1.4"
+    "idd": "^1.1.4",
+    "jquery": "^1.12.2",
+    "DataTables": "~1.9.4"
   },
   "preen": {
     "angara.serializationjs": [
@@ -27,6 +30,14 @@
     ],
     "angara.chartjs": [
       "dist/*"
+    ],
+    "angara.tablejs": [
+      "dist/*"
+    ],
+    "DataTables": [
+      "media/css/jquery.dataTables.css",
+      "media/images/*.png",
+      "media/js/jquery.dataTables.js"
     ],
     "idd": [
       "dist/**/*"
@@ -55,5 +66,8 @@
   },
   "devDependencies": {
     "requirejs": "^2.1.22"
+  },
+  "resolutions": {
+    "jquery":  "1.12.2"
   }
 }

@@ -78,6 +78,14 @@
       <HintPath>..\..\ext\nuget\Angara.Serialization.Json.0.1.2.0\lib\net461\Angara.Serialization.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Angara.Statistics">
+      <HintPath>..\..\ext\nuget\Angara.Statistics.0.1.1.0\lib\net461\Angara.Statistics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Angara.Table">
+      <HintPath>..\..\ext\nuget\Angara.Table.0.1.0.0\lib\net461\Angara.Table.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
@@ -87,6 +95,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\..\ext\nuget\System.Collections.Immutable.1.1.36\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
     <ProjectReference Include="..\Angara.Html\Angara.Html.fsproj">

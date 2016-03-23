@@ -1,9 +1,10 @@
 ﻿require.config({
     paths: {
         "Chart": "angara.chartjs/dist/Chart",
-        "tableViewer": "TableViewer/tableViewer",
-        "jquery.dataTables": "DataTables/jquery.dataTables",
-        "jquery.dataTables-css": "DataTables/jquery.dataTables",
+        "Table": "angara.tablejs/dist/Table",
+        "angara.tablejs": "angara.tablejs/dist/angara.tablejs",
+        "jquery.dataTables": "DataTables/media/js/jquery.dataTables",
+        "jquery.dataTables-css": "DataTables/media/css/jquery.dataTables",
         "chartViewer.umd": "idd/dist/chartViewer.umd",
         "chartViewer-css": "idd/dist/chartViewer",
         "idd": "idd/dist/idd",
