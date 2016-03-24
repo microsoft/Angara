@@ -1,4 +1,8 @@
-## 0.1.4 (March, 2016)
+## 0.1.5 (March 24, 2016)
+
+* Uses recent version of angara.tablejs (v0.1.1).
+
+## 0.1.4 (March 24, 2016)
 
 Features:
 * The repository exposes a bower component `Angara.Html` which includes basic scripts
