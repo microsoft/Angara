@@ -66,10 +66,11 @@ let Make (path:string) =
     let fileName = (if lastChar = Path.DirectorySeparatorChar || lastChar = Path.AltDirectorySeparatorChar then path.Substring(0, path.Length-1) else path) + ".html";
     Save fileName value
 
-let MakeEmbeddable (origin : string) (height: string) (artefact : obj) =
+let MakeEmbeddable (height: string) (artefact : obj) =
     let json = Angara.Serialization.Json.FromObject (UIResolver, artefact)
     let content = json.ToString(Newtonsoft.Json.Formatting.Indented)      
     let viewerId = System.Guid.NewGuid().ToString("N")
+    let origin = sprintf "https://cdn.rawgit.com/predictionmachines/Angara/v%s/dist" AssemblyInfo.Const.Version;
     applySnippet "embeddableIndex.cshtml" (attributes [ "Content", content; "Origin", origin; "ViewerId", viewerId; "Height", height ])
 
 do 

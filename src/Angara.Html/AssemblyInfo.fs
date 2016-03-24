@@ -6,7 +6,7 @@ open System.Runtime.InteropServices
 
 module internal Const =
     [<Literal>]
-    let Version = "0.1.3"
+    let Version = "0.1.4"
 
 [<assembly: AssemblyTitle("Angara.Html")>]
 [<assembly: AssemblyDescription("Dynamically generates an HTML page that displays an object.")>]

@@ -7,12 +7,27 @@
     "Microsoft Research",
     "ITIS MSU"
   ],
-  "license": "Microsoft Research",
+  "license": "MIT",
   "moduleType": [
     "amd"
   ],
-  "homepage": "",
-  "private": true,
+  "homepage": "https://github.com/Microsoft/Angara",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "ext",
+    "node_modules",
+    "packages",
+    "sln",
+    "src",
+    "typings",
+    "Gruntfile.js",
+    "NuGet.Config",
+    "package.json",
+    "SetVersion.js",
+    "tsd.json"
+  ],
   "dependencies": {
     "domReady": "^2.0.1",
     "angara.serializationjs": "predictionmachines/Angara.Serialization",
@@ -68,6 +83,6 @@
     "requirejs": "^2.1.22"
   },
   "resolutions": {
-    "jquery":  "1.12.2"
+    "jquery": "~2.1.4"
   }
 }

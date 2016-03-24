@@ -4,16 +4,18 @@
     <script>
         var content_@ViewerId = @Content;
         require.config({
-            baseUrl: '@Origin',
+            baseUrl: "@Origin",
             paths: {
-                "Chart": "Chart",
-                "tableViewer": "tableViewer",
-                "jquery.dataTables": "DataTables/jquery.dataTables",
-                "jquery.dataTables-css": "DataTables/jquery.dataTables",
-                "chartViewer.umd": "chartViewer.umd",
-                "chartViewer-css": "chartViewer",
-                "idd": "idd",
-                "idd-css": "idd",
+                "angara.serializationjs": "https://cdn.rawgit.com/predictionmachines/Angara.Serialization/v0.1.2/dist/Angara.Serialization.umd",
+                "Chart": "https://cdn.rawgit.com/predictionmachines/Angara.Chart/v0.1.1/dist/Chart",
+                "Table": "https://cdn.rawgit.com/predictionmachines/Angara.Table/v0.1.0/dist/Table",
+                "angara.tablejs": "https://cdn.rawgit.com/predictionmachines/Angara.Table/v0.1.0/dist/angara.tablejs",
+                "jquery.dataTables": "https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/js/jquery.dataTables.min",
+                "jquery.dataTables-css": "https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.11/css/jquery.dataTables",
+                "chartViewer.umd": "https://cdn.rawgit.com/predictionmachines/InteractiveDataDisplay/v1.1.4/dist/chartViewer.umd",
+                "chartViewer-css": "https://cdn.rawgit.com/predictionmachines/InteractiveDataDisplay/v1.1.4/dist/chartViewer",
+                "idd": "https://cdn.rawgit.com/predictionmachines/InteractiveDataDisplay/v1.1.4/dist/idd",
+                "idd-css": "https://cdn.rawgit.com/predictionmachines/InteractiveDataDisplay/v1.1.4/dist/idd",
                 "domReady": "https://cdnjs.cloudflare.com/ajax/libs/require-domReady/2.0.1/domReady.min",
                 "jquery": "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min",
                 "jquery-ui": "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui",
@@ -21,7 +23,7 @@
                 "rx": "https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.lite.min"
             }
         });
-        require(['./Angara.Show', './Angara.Serialization.umd', 'domReady!'], function (Angara, Marshalling, document) {
+        require(['Angara.Show', 'angara.serializationjs', 'domReady!'], function (Angara, Marshalling, document) {
             var viewer = document.getElementById('container_@ViewerId');
             var content_is = Marshalling.InfoSet.Unmarshal(content_@ViewerId);
             var content = Marshalling.InfoSet.Deserialize(content_is);

@@ -1,9 +1,7 @@
-﻿/// <reference path="../typings/requirejs/require.d.ts" />
-/// <reference path="../typings/jquery/jquery.d.ts" />
-/// <reference path="../.Web/angara.serializationjs/dist/Angara.Serialization.umd.d.ts" />
+﻿/// <reference path="../../../typings/requirejs/require.d.ts" />
+/// <reference path="../../../typings/jquery/jquery.d.ts" />
 
 import $ = require("jquery");
-import Angara = require("../.Web/angara.serializationjs/dist/Angara.Serialization.umd");
 
 var endsWith = function (searchString, position) {
     var subjectString = this.toString();
@@ -24,11 +22,11 @@ var descr = function(module: string, type: string){
     return { module: module, type: type };
 }
 
-var describeContent = function (content: any): ContentDescription {
+var describeContent = function (content: any, typeIdPropertyName: string): ContentDescription {
     if (content === undefined || content === null)
         return descr("Primitive", "");
-    if (typeof content[Angara.TypeIdPropertyName] === "string") {
-        var typeId = <string>content[Angara.TypeIdPropertyName];
+    if (typeof content[typeIdPropertyName] === "string") {
+        var typeId = <string>content[typeIdPropertyName];
         return descr(typeId, typeId);
     }
     if (Array.isArray(content))
@@ -50,7 +48,7 @@ var errFailedToLoad = function (err: any, module: string) {
 
 export var Show = function (content: any, container: HTMLElement) {
     $(container).addClass("angara-show-content").html("Loading...");
-    var dsc = describeContent(content);
+    var dsc = describeContent(content, "__angara_typeId");
     require([dsc.module], function (viewer) {
         $(container).html("");
         return viewer.Show(content, container);

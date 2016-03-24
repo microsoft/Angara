@@ -75,7 +75,7 @@ Vestibulum vitae enim sed dui pharetra tristique. Donec maximus elementum maximu
     Angara.Html.Save "supported types.html" supportedTypes
     System.Diagnostics.Process.Start("sample chart.html") |> ignore
 
-    let htmlChart = chart |> Angara.Html.MakeEmbeddable "--place here correct origin--" "450px"
+    let htmlChart = chart |> Angara.Html.MakeEmbeddable "450px"
     System.IO.File.WriteAllText("emb.html", htmlChart)
     printfn "Html is in the emb.html"
 

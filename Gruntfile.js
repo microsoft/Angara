@@ -2,6 +2,9 @@ var path = require('path');
 
 module.exports = function (grunt) {
 
+    var distPath = "dist/";
+    var htmlPath = "src/Angara.Html/";
+
     grunt.initConfig({
         bower: {
             install: {
@@ -14,46 +17,59 @@ module.exports = function (grunt) {
         },
         ts: {
             show: {
-                src: ['Scripts/*.ts'],
-                outDir: 'Scripts',
+                src: [htmlPath+'Scripts/*.ts'],
+                outDir: htmlPath+'Scripts',
                 options: {
                     additionalFlags: '--module amd'
                 }
             }
         },
         clean: {
-            web: ['./.Web/']
+            web: [htmlPath+'./.Web/'],
+            dist: [distPath]
         },
         copy: {
             bower: {
               expand: true,
               cwd: './bower_components',
               src: '**/*',
-              dest: './.Web/'  
+              dest: htmlPath+'./.Web/'  
             },
             styles: {
                 expand: true,
-                cwd: './Scripts/',
+                cwd: htmlPath+'./Scripts/',
                 src: '*.css',
-                dest: './.Web/'
+                dest: htmlPath+'./.Web/'
             },
             scripts: {
                 expand: true,
-                cwd: './Scripts/',
+                cwd: htmlPath+'./Scripts/',
                 src: ['*.js'],
-                dest: './.Web/'
+                dest: htmlPath+'./.Web/'
+            },
+            dist_scripts: {
+                expand: true,
+                cwd: htmlPath+'./Scripts/',
+                src: ['Angara.Show.js', 'Primitive.js', 'Record.js', 'Seq.js'],
+                dest: distPath
+            },
+            dist_styles: {
+                expand: true,
+                cwd: htmlPath+'./Scripts/',
+                src: ['*.css'],
+                dest: distPath
             }
         },
         compress: {
             main: {
                 options: {
-                    archive: 'web.zip',
+                    archive: htmlPath+'web.zip',
                     pretty: true
                 },
                 expand: true,
-                cwd: '.Web/',
+                cwd: htmlPath+'.Web/',
                 src: ['**/*'],
-                dest: '/'
+                dest: "."
             }
         },
         tsd: {
@@ -84,6 +100,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-tsd');
     grunt.loadNpmTasks("grunt-ts");
     grunt.loadNpmTasks('grunt-preen');
-    grunt.registerTask('prepareWeb', ['bower', 'preen', 'clean:web', 'copy:bower', 'tsd', 'ts', 'copy:scripts', 'copy:styles', 'compress']);
-    grunt.registerTask('default', ['prepareWeb']);
+    grunt.registerTask('angara_html_dist', ['clean:dist', 'copy:dist_scripts', 'copy:dist_styles']);
+    grunt.registerTask('angara_html', ['bower', 'preen', 'clean:web', 'copy:bower', 'tsd', 'ts', 'copy:scripts', 'copy:styles', 'compress', 'angara_html_dist']);
+    grunt.registerTask('default', ['angara_html']);
 };

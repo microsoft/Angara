@@ -56,10 +56,6 @@
     <Compile Include="Resolver.fs" />
     <Compile Include="Save.fs" />
     <Content Include="packages.config" />
-    <None Include="bower.json" />
-    <None Include="Gruntfile.js" />
-    <None Include="package.json" />
-    <None Include="tsd.json" />
     <EmbeddedResource Include="web.zip" />
     <None Include="Scripts/App.js" />
     <None Include="Scripts/Main.js" />

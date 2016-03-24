@@ -1,5 +1,6 @@
 ﻿require.config({
     paths: {
+        "Angara.Serialization.umd": "angara.serializationjs/dist/Angara.Serialization.umd",
         "Chart": "angara.chartjs/dist/Chart",
         "Table": "angara.tablejs/dist/Table",
         "angara.tablejs": "angara.tablejs/dist/angara.tablejs",
