@@ -1,8 +1,16 @@
 ﻿namespace Angara.HtmlSerializers
 
 open Angara.Serialization
+open System.Reflection
 
 type RecordViewSerializer() = 
+    let tryGetValue (o:obj) (prop:PropertyInfo) : obj = 
+        try 
+            prop.GetValue(o)
+        with 
+        | ex -> upcast(sprintf "Failed to get value: %O" ex)
+    
+
     interface ISerializer<obj> with
         member x.TypeId = "record"
 
@@ -13,9 +21,9 @@ type RecordViewSerializer() =
                 let t = o.GetType()
                 let sr = ArtefactSerializer.Serialize resolver
                 let is_props = 
-                    t.GetProperties() 
+                    t.GetProperties(BindingFlags.Instance ||| BindingFlags.Public) 
                     |> Seq.filter(fun prop -> prop.GetIndexParameters().Length = 0)
-                    |> Seq.map(fun prop -> prop.Name, let v = prop.GetValue(o) in sr v)
+                    |> Seq.map(fun prop -> prop.Name, let v = tryGetValue o prop in sr v)
                 
                 let is_items = 
                     match o with
