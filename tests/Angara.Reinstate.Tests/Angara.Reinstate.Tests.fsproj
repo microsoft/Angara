@@ -53,7 +53,6 @@
   <Import Project="..\..\.paket\paket.targets" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Content Include="packages.config" />
     <Compile Include="FsCheckAddin.fs" />
     <Compile Include="ReinstateTests.fs" />
     <None Include="paket.references" />

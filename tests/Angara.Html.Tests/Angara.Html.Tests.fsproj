@@ -76,7 +76,6 @@
   <ItemGroup>
     <Compile Include="Angara.Html.Tests.fs" />
     <None Include="App.config" />
-    <Content Include="packages.config" />
     <None Include="1.ChAreaApproximated.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
