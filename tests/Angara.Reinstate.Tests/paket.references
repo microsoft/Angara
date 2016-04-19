@@ -1,0 +1,11 @@
+﻿Angara.Serialization
+Angara.Serialization.Json
+Newtonsoft.Json
+
+group Test
+NUnit
+NUnit.Runners
+FsCheck
+FsCheck.NUnit
+FsUnit
+Unquote

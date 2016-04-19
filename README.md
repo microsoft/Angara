@@ -1,4 +1,4 @@
 # Angara
 
-Angara: the modelling environment.
+A cross-platform framework for composing, evaluating, inspecting and persisting computation experiments.
 

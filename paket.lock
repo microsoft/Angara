@@ -1,0 +1,60 @@
+NUGET
+  remote: https://www.nuget.org/api/v2
+  specs:
+    Angara.Chart (0.2)
+      Angara.Serialization
+    Angara.Serialization (0.2)
+    Angara.Serialization.Json (0.2)
+      Angara.Serialization (>= 0.2)
+      Newtonsoft.Json (>= 8.0.3)
+    Angara.Statistics (0.1.3)
+    Angara.Table (0.2.1)
+      Angara.Serialization
+      Angara.Statistics
+      System.Collections.Immutable (1.1.36)
+    DotNetZip (1.9.8)
+    Newtonsoft.Json (8.0.3)
+    System.Collections.Immutable (1.1.36)
+
+GROUP Build
+NUGET
+  remote: https://www.nuget.org/api/v2
+  specs:
+    FAKE (4.25.4)
+    FSharp.Compiler.Service (2.0.0.6)
+    FSharp.Formatting (2.14.2)
+      FSharp.Compiler.Service (2.0.0.6)
+      FSharpVSPowerTools.Core (>= 2.3 < 2.4)
+    FSharpVSPowerTools.Core (2.3)
+      FSharp.Compiler.Service (>= 2.0.0.3)
+    Microsoft.Bcl (1.1.10) - framework: net10, net11, net20, net30, net35, net40, net40-full
+      Microsoft.Bcl.Build (>= 1.0.14)
+    Microsoft.Bcl.Build (1.0.21) - import_targets: false, framework: net10, net11, net20, net30, net35, net40, net40-full
+    Microsoft.Net.Http (2.2.29) - framework: net10, net11, net20, net30, net35, net40, net40-full
+      Microsoft.Bcl (>= 1.1.10)
+      Microsoft.Bcl.Build (>= 1.0.14)
+    Octokit (0.19)
+      Microsoft.Net.Http
+    SourceLink.Fake (1.1)
+GITHUB
+  remote: fsharp/FAKE
+  specs:
+    modules/Octokit/Octokit.fsx (3bf706bd6058733a1a034755741076b3953aaf09)
+      Octokit
+GROUP Test
+NUGET
+  remote: https://www.nuget.org/api/v2
+  specs:
+    FsCheck (2.3)
+      FSharp.Core (>= 3.1.2.5)
+    FsCheck.Nunit (2.3)
+      FsCheck (>= 2.3)
+      NUnit (>= 2.6.4 < 2.7)
+      NUnit.Runners (>= 2.6.4 < 2.7)
+    FSharp.Core (4.0.0.1)
+    FsUnit (1.4.1)
+      FSharp.Core (>= 3.1.2.5)
+      NUnit (2.6.4)
+    NUnit (2.6.4)
+    NUnit.Runners (2.6.4)
+    Unquote (3.1.1)

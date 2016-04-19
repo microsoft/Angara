@@ -1,0 +1,7 @@
+﻿Angara.Serialization
+Angara.Statistics
+Angara.Table
+System.Collections.Immutable
+
+group Test
+NUnit

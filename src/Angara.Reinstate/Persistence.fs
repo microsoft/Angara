@@ -10,7 +10,7 @@ type ReinstateServices private () =
     
     static member SnapshotFileName = "snapshot.json"
 
-    static member Serializers with get() = library
+    static member Serializers with get() : ISerializerLibrary = upcast library
 
     /// <summary>Reinstates a value either from the storage or recomputing a value from the function.
     /// In the latter case, stores the computed value before returning it to the caller.</summary>

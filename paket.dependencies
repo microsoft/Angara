@@ -1,0 +1,27 @@
+source https://nuget.org/api/v2
+nuget Angara.Serialization
+nuget Angara.Serialization.Json
+nuget Angara.Statistics
+nuget Angara.Table
+nuget Angara.Chart
+nuget System.Collections.Immutable 1.1.36
+nuget DotNetZip
+
+group Build
+  source https://nuget.org/api/v2
+  
+  nuget SourceLink.Fake
+  nuget FAKE
+  nuget FSharp.Formatting
+
+  github fsharp/FAKE modules/Octokit/Octokit.fsx
+
+group Test
+  source https://nuget.org/api/v2
+  
+  nuget NUnit ~> 2
+  nuget NUnit.Runners ~> 2
+  nuget FsCheck
+  nuget FsCheck.NUnit
+  nuget FsUnit
+  nuget Unquote

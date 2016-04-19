@@ -39,9 +39,9 @@ let internal prepareHtml (path : string) (content : string) =
 
 
 /// The library to be filled dynamically with serializers of types for which there are viewers (e.g. Table, Chart).
-let Serializers = Angara.Serialization.SerializerLibrary("Html")
+let Serializers : ISerializerLibrary = upcast Angara.Serialization.SerializerLibrary("Html")
 /// Keeps a serializer for any object when its public properties are serialized.
-let internal RecordSerializer = Angara.Serialization.SerializerLibrary()
+let internal RecordSerializer = Angara.Serialization.SerializerLibrary.CreateEmpty()
 
 /// The last item of the composition must be the RecordSerializer for it is a fallback serializer if none of others is suitable.
 let internal UIResolver = SerializerCompositeResolver([ Angara.Serialization.CoreSerializerResolver.Instance; AssignableSerializerResolver(Serializers); AssignableSerializerResolver(RecordSerializer) ])
