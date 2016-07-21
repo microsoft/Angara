@@ -1,4 +1,7 @@
-##### 0.1.6 - Unpublished
+
+* Uses IDD 1.4.x
+
+## 
 
 * Target framework is .NET 4.5.2
 * Uses Angara.Table 0.2.1, Angara.Chart 0.2.0 and Angara.Serialization 0.2.0
