@@ -2,11 +2,12 @@ source https://nuget.org/api/v2
 nuget Angara.Serialization ~> 0.2.0
 nuget Angara.Serialization.Json ~> 0.2.0
 nuget Angara.Statistics ~> 0.1
-nuget Angara.Table ~> 0.2.1
+nuget Angara.Table ~> 0.2.2
 nuget Angara.Chart ~> 0.2.0
 nuget System.Collections.Immutable 1.1.36
 nuget DotNetZip ~> 1.10.1
-nuget Newtonsoft.Json >= 8.0.3
+nuget Newtonsoft.Json ~> 8.0
+nuget Suave ~> 1.1.2
 
 group Test
   source https://nuget.org/api/v2

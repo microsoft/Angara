@@ -51,11 +51,15 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <Import Project="..\..\.paket\paket.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>$(ProjectDir)prebuild.cmd "$(DevEnvDir)"</PreBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="RecordViewSerializer.fs" />
     <Compile Include="Resolver.fs" />
-    <Compile Include="Save.fs" />
+    <Compile Include="Html.fsi" />
+    <Compile Include="Html.fs" />
     <EmbeddedResource Include="web.zip" />
     <None Include="Scripts/App.js" />
     <None Include="Scripts/Main.js" />
@@ -68,6 +72,8 @@
     <EmbeddedResource Include="Scripts/embeddableIndex.cshtml" />
     <None Include="prebuild.cmd" />
     <None Include="paket.references" />
+    <EmbeddedResource Include="console.html" />
+    <EmbeddedResource Include="console.js" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -79,17 +85,12 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Numerics" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Angara.Reinstate\Angara.Reinstate.fsproj">
       <Name>Angara.Reinstate</Name>
       <Project>{d3c4dedf-431d-4816-b07c-4be07fdd687d}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
-  <PropertyGroup>
-    <PreBuildEvent>$(ProjectDir)prebuild.cmd "$(DevEnvDir)"</PreBuildEvent>
-  </PropertyGroup>
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
       <ItemGroup>
@@ -173,6 +174,17 @@
       <ItemGroup>
         <Reference Include="Newtonsoft.Json">
           <HintPath>..\..\packages\Newtonsoft.Json\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2')">
+      <ItemGroup>
+        <Reference Include="Suave">
+          <HintPath>..\..\packages\Suave\lib\net40\Suave.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
