@@ -35,7 +35,7 @@
     "angara.tablejs": "predictionmachines/Angara.Table",
     "jquery-ui": "^1.11.4",
     "require-css": "^0.1.8",
-    "idd": "1.4.x",
+    "idd": "1.5.4",
     "jquery": "^1.12.2",
     "DataTables": "~1.9.4"
   },
@@ -84,6 +84,6 @@
   },
   "resolutions": {
     "jquery": "~2.1.4",
-    "idd": "1.4.x"
+    "idd": "1.5.4"
   }
 }
