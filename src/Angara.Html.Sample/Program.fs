@@ -35,13 +35,15 @@ let main argv =
 
     (*   Tables   *)
     let tableXY = Table.OfColumns([Column.Create("x", x); Column.Create("y", y)])
+    let tableXYViewSettings = TableViewSettings.Create(TableViewerTab.TabData, PageSize.Size25, true, [| "y", "return (x * 100).toFixed(2) + '%';" |] |> Map.ofArray )
+    let tableXYView = { TableView.Table = tableXY; ViewSettings = tableXYViewSettings }
 
     (*   Charts   *)
     let plots = 
         [ Plot.line(x |> Array.map float, y, stroke = "orange", thickness = 2.0)
         ; Plot.markers(x |> Array.map float, y, color = MarkersColor.Value "blue", shape = MarkersShape.Circle) ]
     
-    let chart = Chart.ofList plots
+    let chart = Chart.ofList plots |> Chart.setLayout(ChartLayout.Lean) |> Chart.setXAxis (Labelled([|0.0; 25.0; 50.0|],[|"First"; "Second"; "Third"|], 30.0))
 
 
     let supportedTypes = 
@@ -71,6 +73,7 @@ Vestibulum vitae enim sed dui pharetra tristique. Donec maximus elementum maximu
     Angara.Base.Init()
     Angara.Html.Save "sample chart.html" chart
     Angara.Html.Save "sample table.html" tableXY
+    Angara.Html.Save "sample table view.html" tableXYView
     //Angara.Html.Save "sample tables.html" [| tableXY; Tables.Empty |> Tables.Add "c" [| 0..50 |] |> Tables.Add "t" [| for x in 0..50 do yield System.DateTime(2015,1,1).AddHours(float x) |] |]
     Angara.Html.Save "supported types.html" supportedTypes
     System.Diagnostics.Process.Start("sample chart.html") |> ignore

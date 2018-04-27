@@ -35,7 +35,7 @@ module.exports = function (grunt) {
                 src: [
                     'angara.serializationjs/dist/*.umd.*',
                     'angara.chartjs/dist/*',
-                    'angara.tablejs/dist/*',
+                    'angara.tablejs/dist/**/*',
                     'datatables.net-dt/media/css/jquery.dataTables.css',
                     'datatables.net-dt/media/images/*.png',
                     'datatables.net-dt/media/js/jquery.dataTables.js',
@@ -48,7 +48,11 @@ module.exports = function (grunt) {
                     'require-css/*.js',
                     'jquery-ui/jquery-ui.*js',
                     'jqueryui/jquery-ui.*js',
-                    'modernizr/modernizr.*js'
+                    'modernizr/modernizr.*js',
+                    'svg.js/dist/*.min.js',
+                    'require-css/css.min.js',
+                    'file-saver/FileSaver.min.js',
+                    'jquery-mousewheel/jquery.mousewheel.js'
                 ],
                 dest: htmlPath+'./.Web/'
             },
