@@ -29,11 +29,28 @@ module.exports = function (grunt) {
             dist: [distPath]
         },
         copy: {
-            bower: {
-              expand: true,
-              cwd: './bower_components',
-              src: '**/*',
-              dest: htmlPath+'./.Web/'  
+            deps: {
+                expand: true,
+                cwd: './node_modules',
+                src: [
+                    'angara.serializationjs/dist/*.umd.*',
+                    'angara.chartjs/dist/*',
+                    'angara.tablejs/dist/*',
+                    'datatables.net-dt/media/css/jquery.dataTables.css',
+                    'datatables.net-dt/media/images/*.png',
+                    'datatables.net-dt/media/js/jquery.dataTables.js',
+                    'interactive-data-display/dist/**/*',
+                    'domReady/domReady.js',
+                    'jquery/dist/*',
+                    'rx/dist/rx.lite.js',
+                    'rx/dist/rx.lite.min.js',
+                    'rx/dist/rx.lite.map',
+                    'require-css/*.js',
+                    'jquery-ui/jquery-ui.*js',
+                    'jqueryui/jquery-ui.*js',
+                    'modernizr/modernizr.*js'
+                ],
+                dest: htmlPath+'./.Web/'
             },
             styles: {
                 expand: true,
@@ -93,14 +110,12 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.loadNpmTasks('grunt-bower-task');
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-tsd');
     grunt.loadNpmTasks("grunt-ts");
-    grunt.loadNpmTasks('grunt-preen');
     grunt.registerTask('angara_html_dist', ['clean:dist', 'copy:dist_scripts', 'copy:dist_styles']);
-    grunt.registerTask('angara_html', ['bower', 'preen', 'clean:web', 'copy:bower', 'tsd', 'ts', 'copy:scripts', 'copy:styles', 'compress', 'angara_html_dist']);
+    grunt.registerTask('angara_html', ['clean:web', 'copy:deps', 'tsd', 'ts', 'copy:scripts', 'copy:styles', 'compress', 'angara_html_dist']);
     grunt.registerTask('default', ['angara_html']);
 };

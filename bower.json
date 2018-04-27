@@ -30,14 +30,7 @@
   ],
   "dependencies": {
     "domReady": "^2.0.1",
-    "angara.serializationjs": "predictionmachines/Angara.Serialization",
-    "angara.chartjs": "predictionmachines/Angara.Chart",
-    "angara.tablejs": "predictionmachines/Angara.Table",
-    "jquery-ui": "^1.11.4",
-    "require-css": "^0.1.8",
-    "idd": "1.5.4",
-    "jquery": "^1.12.2",
-    "DataTables": "~1.9.4"
+    "angara.serializationjs": "predictionmachines/Angara.Serialization"
   },
   "preen": {
     "angara.serializationjs": [

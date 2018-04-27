@@ -660,6 +660,11 @@ NUGET
       System.Threading (>= 4.3) - restriction: && (< monoandroid) (< monotouch) (< net46) (>= netstandard1.3) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)
       System.Xml.ReaderWriter (>= 4.3) - restriction: && (< monoandroid) (< monotouch) (< net46) (>= netstandard1.3) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)
 
+GROUP Build
+NUGET
+  remote: https://www.nuget.org/api/v2
+    Yarnpkg.Yarn (1.6)
+
 GROUP Test
 NUGET
   remote: https://www.nuget.org/api/v2

@@ -4,19 +4,33 @@
   "license": "MIT",
   "private": true,
   "main": "Gruntfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "interactive-data-display": "^1.5.4",
+    "jquery": "~3.1.1",
+    "jquery-ui": "^1.11.4",
+    "require-css": "^0.1.10",
+    "requirejs": "~2.1.22",
+    "svg.js": "~2.3.6",
+    "rx": "~4.1.0",
+    "datatables.net-dt": "DataTables/DataTables#1.9.4",
+    "npm-modernizr": "^2.8.3",
+    "angara.chartjs": "predictionmachines/Angara.Chart",
+    "angara.tablejs": "predictionmachines/Angara.Table",
+    "angara.serializationjs": "predictionmachines/Angara.Serialization#*",
+    "domReady": "requirejs/domReady#^2.0.1"
+  },
   "devDependencies": {
-    "bower": "^1.4.1",
     "grunt": "^0.4.5",
-    "grunt-bower-task": "^0.4.0",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-compress": "^0.14.0",
     "grunt-contrib-copy": "^0.8.2",
-    "grunt-preen": "^1.2.0",
     "grunt-replace": "^0.11.0",
     "grunt-ts": "^5.2.0",
     "grunt-tsd": "^0.2.0-beta.1"
   },
-  "description": ""
+  "description": "",
+  "engines": {
+    "yarn": ">= 1.6.0"
+  }
 }
