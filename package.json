@@ -14,8 +14,8 @@
     "rx": "~4.1.0",
     "datatables.net-dt": "DataTables/DataTables#1.9.4",
     "npm-modernizr": "^2.8.3",
-    "angara.chartjs": "predictionmachines/Angara.Chart#0.3.0",
-    "angara.tablejs": "predictionmachines/Angara.Table#0.3.2",
+    "angara.chartjs": "predictionmachines/Angara.Chart#0.3.1",
+    "angara.tablejs": "predictionmachines/Angara.Table#0.3.3",
     "angara.serializationjs": "predictionmachines/Angara.Serialization#0.3.0",
     "domReady": "requirejs/domReady#^2.0.1"
   },

@@ -8,7 +8,7 @@ NUGET
       Newtonsoft.Json (>= 10.0.1)
     Angara.Statistics (0.1.4)
       Angara.Serialization
-    Angara.Table (0.3.2)
+    Angara.Table (0.3.3)
       Angara.Serialization (>= 0.3 < 0.4)
       Angara.Statistics (>= 0.1 < 1.0)
       System.Collections.Immutable (1.1.36)

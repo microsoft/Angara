@@ -52,7 +52,8 @@ module.exports = function (grunt) {
                     'svg.js/dist/*.min.js',
                     'require-css/css.min.js',
                     'file-saver/FileSaver.min.js',
-                    'jquery-mousewheel/jquery.mousewheel.js'
+                    'jquery-mousewheel/jquery.mousewheel.js',
+                    'requirejs/require.js'
                 ],
                 dest: htmlPath+'./.Web/'
             },

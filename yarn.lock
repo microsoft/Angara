@@ -22,9 +22,9 @@ ajv@^5.1.0:
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.3.0"
 
-angara.chartjs@predictionmachines/Angara.Chart#0.3.0:
-  version "0.3.0"
-  resolved "https://codeload.github.com/predictionmachines/Angara.Chart/tar.gz/1e7bdabac2857945d268a67d8ca1a9eef15a3ffb"
+angara.chartjs@predictionmachines/Angara.Chart#0.3.1:
+  version "0.3.1"
+  resolved "https://codeload.github.com/predictionmachines/Angara.Chart/tar.gz/dc0135639c105185a9a78b77b158eb29ef4ddfee"
   dependencies:
     interactive-data-display "^1.5.4"
     jquery "~2.1.4"
@@ -37,9 +37,9 @@ angara.serializationjs@predictionmachines/Angara.Serialization#0.3.0:
   version "0.3.0"
   resolved "https://codeload.github.com/predictionmachines/Angara.Serialization/tar.gz/62ea60e957f2bd23596a8000c8b58c39251ff605"
 
-angara.tablejs@predictionmachines/Angara.Table#0.3.2:
-  version "0.3.2"
-  resolved "https://codeload.github.com/predictionmachines/Angara.Table/tar.gz/29aa010b0932edb1c4671529d632cdcc9ea8f526"
+angara.tablejs@predictionmachines/Angara.Table#0.3.3:
+  version "0.3.3"
+  resolved "https://codeload.github.com/predictionmachines/Angara.Table/tar.gz/61e808c5ed2dcd46ae361cadec6e17ed9043ca6d"
   dependencies:
     datatables.net-dt DataTables/DataTables#1.9.4
     interactive-data-display "^1.5.3"
