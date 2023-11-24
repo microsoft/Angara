@@ -549,7 +549,7 @@ esutils@^1.1.6:
 
 event-stream@~3.1.5:
   version "3.1.7"
-  resolved "http://registry.npmjs.org/event-stream/-/event-stream-3.1.7.tgz#b4c540012d0fe1498420f3d8946008db6393c37a"
+  resolved "https://registry.npmjs.org/event-stream/-/event-stream-3.1.7.tgz#b4c540012d0fe1498420f3d8946008db6393c37a"
   dependencies:
     duplexer "~0.1.1"
     from "~0"
@@ -1225,9 +1225,11 @@ jquery-mousewheel@~3.1.13:
   version "3.1.13"
   resolved "https://registry.yarnpkg.com/jquery-mousewheel/-/jquery-mousewheel-3.1.13.tgz#06f0335f16e353a695e7206bf50503cb523a6ee5"
 
-jquery-ui@^1.11.4:
-  version "1.12.1"
-  resolved "https://registry.yarnpkg.com/jquery-ui/-/jquery-ui-1.12.1.tgz#bcb4045c8dd0539c134bc1488cdd3e768a7a9e51"
+jquery-ui@^1.13.2:
+  version "1.13.2"
+  resolved "https://registry.yarnpkg.com/jquery-ui/-/jquery-ui-1.13.2.tgz#de03580ae6604773602f8d786ad1abfb75232034"
+  dependencies:
+    jquery ">=1.8.0 <4.0.0"
 
 "jquery@1.4 - 1.8":
   version "1.8.3"
@@ -1239,6 +1241,10 @@ jquery-ui@^1.11.4:
     location "0.0.1"
     navigator "~1.0.1"
     xmlhttprequest "~1.4.2"
+
+"jquery@>=1.8.0 <4.0.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
 
 jquery@~2.1.4:
   version "2.1.4"
